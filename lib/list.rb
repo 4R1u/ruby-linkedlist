@@ -6,8 +6,8 @@ require_relative 'node'
 class LinkedList
   attr_reader :head
 
-  def initialize(value = nil)
-    @head = Node.new value
+  def initialize
+    @head = nil
   end
 
   def tail
