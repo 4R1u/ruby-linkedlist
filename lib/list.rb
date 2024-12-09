@@ -9,4 +9,10 @@ class LinkedList
   def initialize
     @head = Node.new
   end
+
+  def tail
+    node = @head
+    node = node.next_node until node.next_node.nil?
+    node
+  end
 end
