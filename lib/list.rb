@@ -65,4 +65,14 @@ class LinkedList
     end
     prev_node.next_node = nil
   end
+
+  def contains?(value)
+    node = @head
+    until node.nil?
+      return true if value == node.value
+
+      node = node.next_node
+    end
+    false
+  end
 end
