@@ -36,12 +36,14 @@ class LinkedList
     else
       tail.next_node = Node.new value
     end
+    nil
   end
 
   def prepend(value)
     old_head = @head
     @head = Node.new value
     @head.next_node = old_head
+    nil
   end
 
   def at(index)
@@ -102,19 +104,17 @@ class LinkedList
     old_next_node = node.next_node
     node.next_node = Node.new value
     node.next_node.next_node = old_next_node
+    nil
   end
 
   def delete_at(index)
-    unless index.positive?
-      @head = @head.next_node
-      return
-    end
+    return @head = @head.next_node unless index.positive?
+
     prev_node = at(index - 1)
-    if prev_node&.next_node()&.next_node.nil?
-      pop
-      return
-    end
+    return pop if prev_node&.next_node()&.next_node.nil?
+
     node = prev_node&.next_node
     prev_node&.next_node = node&.next_node
+    nil
   end
 end
