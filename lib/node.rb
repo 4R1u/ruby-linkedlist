@@ -11,6 +11,6 @@ class Node
   end
 
   def next_node=(node)
-    @next_node = node if node.is_a?(Node)
+    @next_node = node if node.is_a?(Node) || node.nil?
   end
 end
