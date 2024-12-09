@@ -103,4 +103,18 @@ class LinkedList
     node.next_node = Node.new value
     node.next_node.next_node = old_next_node
   end
+
+  def delete_at(index)
+    unless index.positive?
+      @head = @head.next_node
+      return
+    end
+    prev_node = at(index - 1)
+    if prev_node&.next_node()&.next_node.nil?
+      pop
+      return
+    end
+    node = prev_node&.next_node
+    prev_node&.next_node = node&.next_node
+  end
 end
