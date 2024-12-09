@@ -31,7 +31,11 @@ class LinkedList
   end
 
   def append(value)
-    tail.next_node = Node.new value
+    if @head.nil?
+      @head = Node.new value
+    else
+      tail.next_node = Node.new value
+    end
   end
 
   def prepend(value)
