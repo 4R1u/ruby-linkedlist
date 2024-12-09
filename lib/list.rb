@@ -43,4 +43,14 @@ class LinkedList
     @head = Node.new(value)
     @head.next_node = old_head
   end
+
+  def at(index)
+    node = @head
+    index.times do
+      break if node.nil?
+
+      node = node.next_node
+    end
+    node
+  end
 end
