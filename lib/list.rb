@@ -94,8 +94,10 @@ class LinkedList
   end
 
   def insert_at(value, index)
+    return prepend(value) unless index.positive?
+
     node = at(index - 1)
-    return if node.nil?
+    return append(value) if node.nil?
 
     old_next_node = node.next_node
     node.next_node = Node.new value
