@@ -12,6 +12,8 @@ class LinkedList
 
   def tail
     node = @head
+    return nil if node.nil?
+
     node = node.next_node until node.next_node.nil?
     node
   end
