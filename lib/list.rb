@@ -29,4 +29,8 @@ class LinkedList
     end
     count
   end
+
+  def append(value)
+    tail.next_node = Node.new value
+  end
 end
