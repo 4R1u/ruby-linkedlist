@@ -20,7 +20,9 @@ class LinkedList
 
   def size
     node = @head
-    count = @head.nil? ? 0 : 1
+    return 0 if node.nil?
+
+    count = 1
     until node.next_node.nil?
       node = node.next_node
       count += 1
