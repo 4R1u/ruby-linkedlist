@@ -81,4 +81,15 @@ class LinkedList
     end
     nil
   end
+
+  def to_s
+    string = ''
+    node = @head
+    until node.nil?
+      string += "( #{node.value} ) -> "
+      node = node.next_node
+    end
+    string += 'nil'
+    string
+  end
 end
