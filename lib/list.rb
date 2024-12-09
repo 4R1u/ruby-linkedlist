@@ -33,4 +33,10 @@ class LinkedList
   def append(value)
     tail.next_node = Node.new value
   end
+
+  def prepend(value)
+    old_head = @head
+    @head = Node.new(value)
+    @head.next_node = old_head
+  end
 end
