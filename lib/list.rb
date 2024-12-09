@@ -7,7 +7,7 @@ class LinkedList
   attr_reader :head
 
   def initialize(value = nil)
-    @head = Node.new(value)
+    @head = Node.new value
   end
 
   def tail
@@ -40,7 +40,7 @@ class LinkedList
 
   def prepend(value)
     old_head = @head
-    @head = Node.new(value)
+    @head = Node.new value
     @head.next_node = old_head
   end
 
