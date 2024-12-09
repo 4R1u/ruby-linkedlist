@@ -2,7 +2,8 @@
 
 # Node in the LinkedList
 class Node
-  attr_accessor :value, :next_node
+  attr_reader :next_node
+  attr_accessor :value
 
   def initialize(value = nil, next_node = nil)
     @value = value
