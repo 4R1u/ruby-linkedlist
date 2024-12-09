@@ -9,4 +9,8 @@ class Node
     @value = value
     @next_node = next_node
   end
+
+  def next_node=(node)
+    @next_node = node if node.is_a?(Node)
+  end
 end
