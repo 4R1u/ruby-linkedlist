@@ -92,4 +92,13 @@ class LinkedList
     string += 'nil'
     string
   end
+
+  def insert_at(value, index)
+    node = at(index - 1)
+    return if node.nil?
+
+    old_next_node = node.next_node
+    node.next_node = Node.new value
+    node.next_node.next_node = old_next_node
+  end
 end
